@@ -25,10 +25,10 @@ class Estudiante extends Persona {
     
   }
   
-  saludar() {
-  console.log("Hola mi nombre es: "+ this.nombre+"tengo "+ this.edad);
-  }
-};
+}
+function saludar(estudiante:Persona) {
+document.write(" Hola mi nombre es: "+ estudiante.nombre+" tengo "+ estudiante.edad);
+}
 class Docente extends Persona {
   contrato: string;
   titulo: string;
@@ -47,27 +47,27 @@ class Docente extends Persona {
   calcularSalario(): number {
     const pagoPorDias = this.salarioBase / this.diasDeTrabajo;
     const pagoPorhora = pagoPorDias / this.horasTrabajo;
-    return pagoPorDia
+    return pagoPorhora
   }
 
 }
 //let estudiante = new Estudiante (45,"tecero");
-//console.log(estudiante.numeroMatricula, estudiante.nivel);
+//document.write(estudiante.numeroMatricula, estudiante.nivel);
 //document.write(estudiante.numeroMatricula, estudiante.nivel);
 //let docente = new Docente ("contrato1","ingeniero");
-//console.log(docente.contrato, docente.titulo);
+//document.write(docente.contrato, docente.titulo);
 
 // let persona = new Persona(1, "20", "Alexander", "099912965", "Quitumbe");
-// console.log(persona.id,persona.edad,persona.nombre,persona.telefono,persona.direccion);
+// document.write(persona.id,persona.edad,persona.nombre,persona.telefono,persona.direccion);
 let estudiante = new Estudiante(1, "20", "Alexander", "0994654", "quitumbe", 2, "tercero");
-console.log(estudiante.nivel, estudiante.numeroMatricula, estudiante.nombre , estudiante.nivel, estudiante.id, estudiante.edad, estudiante.direccion);
-console.log(estudiante.saludar())
+document.write("Nivel del estudiante: "+estudiante.nivel+"<br>"+ "Numero de matricula: "+estudiante.numeroMatricula.toString()+"<br>"+ "Nombre del estudiante: "+estudiante.nombre +"<br>"+"ID del estudiante "+estudiante.id.toString()+"<br>"+"Edad del estudiante: "+estudiante.edad.toString()+"<br>"+"Direccion del estudiante"+estudiante.direccion+"<br>");
+saludar(estudiante)
 let docente = new Docente(1, "35", "Alexander", "0999464652", "Quitumbe", "Contrato1", "ingeniero",400,30,8);
 const pagoPorDia = docente.salarioBase / docente.diasDeTrabajo;
 const pagoPorHora = pagoPorDia / docente.horasTrabajo;
 console.log(docente.calcularSalario())
-console.log(pagoPorDia)
-console.log(pagoPorHora)
+console.log("pago del docente por dia = "+pagoPorDia)
+console.log("pago del docente por dia = "+pagoPorHora)
 
 
 
